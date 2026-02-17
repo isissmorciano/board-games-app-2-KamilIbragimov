@@ -5,7 +5,7 @@ import os
 if not os.path.exists('instance'):
     os.makedirs('instance')
 
-db_path = os.path.join('instance', 'blog.sqlite')
+db_path = os.path.join('instance', 'schema.sqlite')
 
 # Ci connettiamo (se il file non esiste, lo crea)
 connection = sqlite3.connect(db_path)

@@ -1,0 +1,25 @@
+{{extend "base.html"}}
+
+
+
+{{block content}}
+{{for gioco in giochi}}
+<article>
+
+    <h1>{{gioco['nome']}}</h1>
+    <p>{{gioco['descrizione']}}</p>
+    <p>Numero di giocatori: {{gioco['numero_giocatori']}}</p>
+    <p>Durata: {{gioco['durata']}} minuti</p>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+{{end block}}

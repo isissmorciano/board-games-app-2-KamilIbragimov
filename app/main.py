@@ -8,7 +8,7 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    pass
+    return render_template('index.html')
 
 
 
@@ -17,5 +17,5 @@ def index():
 @bp.route('/lista_giochi', methods=('GET',))
 def giochi():
     if request.method =='GET':
-            gioco = giochi_repositories.get_giochi()
-    return render_template('giochi_html', gioco=gioco)
+            giochi = giochi_repositories.get_giochi()
+    return render_template('giochi.html', giochi=giochi)
