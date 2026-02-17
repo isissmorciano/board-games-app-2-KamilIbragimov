@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Board Games</h1>
+  
+
+ 
+
+  {% for Games in Games %}
+    <article>
+      <header>
+        
+          <h2>{{ Games['nome'] }}</h2>
+          <h2>{{ Games['categoria'] }}</h2>
+          <h2>{{ Games['giocatori'] }}</h2>
+          <h2>{{ Games['durata'] }}</h2>
+          <h2>{{ Games['anno'] }}</h2>
+          <h2>{{ Games['editore'] }}</h2> 
+        
+          
+
+      
+
+      <p>{{ Games['body'] }}</p>
+      
+     
+    </article>
+    <hr>
+  {% endfor %}
+{% endblock %}

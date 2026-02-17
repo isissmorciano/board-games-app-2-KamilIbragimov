@@ -1,0 +1,41 @@
+<!-- app/templates/base.html -->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Board Games{% endblock %}</title>
+    <!-- Qui potremmo linkare un CSS -->
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        nav a { margin-right: 10px; text-decoration: none; color: blue; }
+        hr { border: 0; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Benvenuti su Board Games!{% endblock %}</h1>
+        <nav>
+            <a href="{{ url_for('crea_gioco') }}">crea_gioco</a>
+            <a href="{{ url_for('registra_gioco.html') }}">Registra Gioco</a>
+            <a href="{{ url_for('partite.html') }}">Aggiungi Gioco</a>
+            <a href="{{ url_for('giochi.html') }}">Lista Giochi</a>
+        </nav>
+    <hr>
+
+    <!-- Zona Messaggi Flash -->
+    {% for message in get_flashed_messages() %}
+        <div class="flash" style="color: red; border: 1px solid red; padding: 10px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <hr>
+    <footer>
+        <small>&copy; 2026 - Classe 5^A Informatica</small>
+    </footer>
+</body>
+</html>
